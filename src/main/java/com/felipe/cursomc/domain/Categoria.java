@@ -2,11 +2,19 @@ package com.felipe.cursomc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	private String nomeString;
+	private String nome;
 	
 	
 	
@@ -16,7 +24,7 @@ public class Categoria implements Serializable {
 	public Categoria(Integer id, String nomeString) {
 		super();
 		this.id = id;
-		this.nomeString = nomeString;
+		this.nome = nomeString;
 	}
 
 	public Integer getId() {
@@ -28,11 +36,11 @@ public class Categoria implements Serializable {
 	}
 
 	public String getNomeString() {
-		return nomeString;
+		return nome;
 	}
 
 	public void setNomeString(String nomeString) {
-		this.nomeString = nomeString;
+		this.nome = nomeString;
 	}
 
 	@Override
@@ -40,7 +48,7 @@ public class Categoria implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((nomeString == null) ? 0 : nomeString.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
 
@@ -58,10 +66,10 @@ public class Categoria implements Serializable {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (nomeString == null) {
-			if (other.nomeString != null)
+		if (nome == null) {
+			if (other.nome != null)
 				return false;
-		} else if (!nomeString.equals(other.nomeString))
+		} else if (!nome.equals(other.nome))
 			return false;
 		return true;
 	}
