@@ -11,7 +11,7 @@ import com.felipe.cursomc.domain.Cliente;
 import com.felipe.cursomc.services.ClienteService;
 
 @Controller
-@RequestMapping(value = "/cliente")
+@RequestMapping(value = "/clientes")
 public class ClienteResource {
 	
 	@Autowired
