@@ -1,7 +1,6 @@
 package com.felipe.cursomc.domain.enums;
 
 public enum EstadoPagamento {
-	
 	PENDENTE(1, "Pendente"),
 	QUITADO(2, "Quitado"),
 	CANCELADO(3, "Cancelado");
@@ -31,8 +30,6 @@ public enum EstadoPagamento {
 				return x;
 			}
 		}
-		throw new IllegalArgumentException("id inválido: " + cod);
-		
+		throw new IllegalArgumentException("id inválido: " + cod);	
 	}
-	
 }
